@@ -1,5 +1,7 @@
 package com.example.firstopenglprojectactivity;
 
+import java.nio.FloatBuffer;
+
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.app.Activity;
@@ -26,7 +28,7 @@ public class MainActivity extends Activity {
         
         if(supportsEs2) {
             glSurfaceView.setEGLContextClientVersion(2);
-            glSurfaceView.setRenderer(new FirstRenderer());
+            glSurfaceView.setRenderer(new FirstRenderer(this));
             rendererSet = true;
         } else {
             Toast.makeText(this, "This device do not support OpenGL ES 2.0", Toast.LENGTH_SHORT);
